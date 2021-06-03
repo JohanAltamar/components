@@ -1,0 +1,43 @@
+.btn {
+  margin: $spacing;
+  padding: $spacing * 2;
+  border: none;
+  border-radius: $spacing;
+  cursor: pointer;
+  white-space: nowrap;
+  
+  &:disabled {
+    cursor: default;
+  }
+}
+
+$colors:
+  "primary"   $primary   $white,
+  "secondary" $secondary $white,
+  "success"   $success   $white,
+  "danger"    $danger    $white,
+  "info"      $info      $black,
+  "warning"   $warning   $black,
+  "light"     $light     $black,
+  "dark"      $dark      $white,
+  "link"      $light     $primary;
+
+@each $name, $bg-color, $color in $colors {
+  .btn-#{$name}{
+    background-color: $bg-color;
+    color: $color;
+    transition: all .3s;
+
+    @if $name == "link" {
+      text-decoration: underline;
+    }
+
+    &:hover{
+      background-color: darken($color: $bg-color, $amount: 10);
+    }
+
+    &:disabled {
+      background-color: lighten($color: $bg-color, $amount: 15);
+    }
+  }
+}

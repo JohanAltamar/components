@@ -1,0 +1,10 @@
+.btns__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: $spacing * 4;
+  margin-bottom: 0;
+  padding: $spacing * 4;
+  border-radius: $spacing * 2 $spacing * 2 0 0;
+  border: 1px solid $dark;
+}

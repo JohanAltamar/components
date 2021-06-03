@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Button from "./components/Button";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const variations: string[] = [
+  "primary",
+  "secondary",
+  "success",
+  "danger",
+  "warning",
+  "info",
+  "light",
+  "dark",
+  "link",
+];
+
+export const App: React.FC = () => (
+  <main className="main__container">
+    <section className="btns__container">
+      <Button variation="primary">Primary</Button>
+      <Button variation="secondary">Secondary</Button>
+      <Button variation="success">Success</Button>
+      <Button variation="danger">Danger</Button>
+      <Button variation="warning">Warning</Button>
+      <Button variation="info">Info</Button>
+      <Button variation="light">Light</Button>
+      <Button variation="dark">Dark</Button>
+      <Button variation="link">Link</Button>
+    </section>
+    
+    <code className="btns-code__container">
+      {variations.map(variation => (
+        <span key={variation}>{`<Button variantion=${variation}>${
+          variation.charAt(0).toUpperCase() + variation.slice(1)
+        }</Button>`}</span>
+      ))}
+    </code>
+  </main>
+);
 
 export default App;

@@ -1,0 +1,7 @@
+.btns-code__container{
+  display: flex;
+  flex-direction: column;
+  padding: $spacing * 4;
+  margin: 0 $spacing *4;
+  background-color: $light;
+}
