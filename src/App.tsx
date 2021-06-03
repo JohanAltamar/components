@@ -27,10 +27,10 @@ export const App: React.FC = () => (
       <Button variation="dark">Dark</Button>
       <Button variation="link">Link</Button>
     </section>
-    
+
     <code className="btns-code__container">
       {variations.map(variation => (
-        <span key={variation}>{`<Button variantion=${variation}>${
+        <span key={variation}>{`<Button variation="${variation}">${
           variation.charAt(0).toUpperCase() + variation.slice(1)
         }</Button>`}</span>
       ))}
