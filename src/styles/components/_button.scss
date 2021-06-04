@@ -5,35 +5,33 @@
   border-radius: $spacing;
   cursor: pointer;
   white-space: nowrap;
-  
+
   &:disabled {
     cursor: default;
   }
 }
 
-$colors:
-  "primary"   $primary   $white,
-  "secondary" $secondary $white,
-  "success"   $success   $white,
-  "danger"    $danger    $white,
-  "info"      $info      $black,
-  "warning"   $warning   $black,
-  "light"     $light     $black,
-  "dark"      $dark      $white,
-  "link"      $light     $primary;
+$colors: "primary" $primary $white, "secondary" $secondary $white,
+  "success" $success $white, "danger" $danger $white, "info" $info $black,
+  "warning" $warning $black, "light" $light $black, "dark" $dark $white,
+  "link" $light $primary;
 
 @each $name, $bg-color, $color in $colors {
-  .btn-#{$name}{
+  .btn-#{$name} {
     background-color: $bg-color;
     color: $color;
-    transition: all .3s;
+    transition: all 0.3s;
 
     @if $name == "link" {
       text-decoration: underline;
     }
 
-    &:hover{
+    &:hover {
       background-color: darken($color: $bg-color, $amount: 10);
+    }
+
+    &:active {
+      background-color: darken($color: $bg-color, $amount: 20);
     }
 
     &:disabled {
