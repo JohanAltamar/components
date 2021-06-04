@@ -16,4 +16,14 @@ describe("Button Component", () => {
     );
     expect(container.firstChild).toHaveClass(`btn-${variation.toLowerCase()}`);
   });
+  
+  test("Render correctly when variation and className are set", () => {
+    const variation = "secondary";
+    const className = "test";
+    const { container } = render(
+      <Button className={className} variation={variation}>Button Text</Button>
+    );
+    expect(container.firstChild).toHaveClass(`btn-${variation.toLowerCase()}`);
+    expect(container.firstChild).toHaveClass(`${className}`);
+  });
 });
